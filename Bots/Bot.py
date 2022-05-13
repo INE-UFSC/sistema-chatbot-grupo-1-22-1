@@ -15,11 +15,11 @@ class Bot(ABC):
         self.__nome = nome
 
     def mostra_comandos(self):
-        pass
+        for index, comando in enumerate(comandos):
+            print(f'{index+1} | {self.comandos[f'{index+1}'][0]}')
 
-    @abstractmethod
     def executa_comando(self,cmd:str):
-        pass
+        return self.comandos[f'{cmd}'][1]
 
     @abstractmethod
     def boas_vindas():
