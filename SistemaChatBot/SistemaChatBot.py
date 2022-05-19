@@ -41,6 +41,7 @@ class SistemaChatBot:
     def le_envia_comando(self):
         nr_comando = input(f'Escolha um comando para o Bot {self.__bot.nome} [-1 PARA SAIR]: ')
         if nr_comando == '-1':
+            self.print_mensagem_bot(self.__bot.despedida())
             return 'sair'
         elif nr_comando not in self.__bot.comandos.keys():
             self.print_mensagem_bot('Este comando não existe...')
@@ -59,6 +60,7 @@ class SistemaChatBot:
         self.escolhe_bot()
         ##mostra mensagens de boas-vindas do bot escolhido
         self.print_mensagem_bot(self.__bot.boas_vindas())
+        self.print_mensagem_bot(self.__bot.apresentacao())
         ##entra no loop de mostrar comandos do bot e escolher comando do bot até o usuário definir a saída
         ##ao sair mostrar a mensagem de despedida do bot
         while True:
