@@ -1,12 +1,11 @@
 from Bots.Bot import Bot
+from ComandosBots.CaixaComandos import CaixaComandos
+from ComandosBots.dbComandos import comandosBotTriste
 
 class BotTriste(Bot):
     def __init__(self, nome:str):
         super().__init__(nome)
-        self.comandos = {"1": ("Bom dia", "Não tão bom para mim mas espero que o seu esteja indo bem..."), 
-                         "2": ("Seu nome", f"Meu nomé é {self.nome}"),
-                         "3": ("Quero um conselho", "Quando foi a ultima vez que você chorou? Externalizar os sentimentos é saudável!"),
-                         "4": ("Mensagem de despedida", "Mas já? Vais me abandonar também?")}
+        self.caixa_comandos = CaixaComandos(comandosBotTriste())
 
     def apresentacao(self):
         return f'O-Oi, me chamo {self.nome}. Esse parece um nome triste...?'

@@ -4,7 +4,7 @@ import random as r
 class Bot(ABC):
     def __init__(self, nome):
         self.nome = nome
-        self.comandos = {}
+        self.caixa_comandos = {}
 
     @property
     def nome(self):
@@ -15,11 +15,13 @@ class Bot(ABC):
         self.__nome = nome
 
     def mostra_comandos(self):
-        for index, chave in enumerate(self.comandos):
-            print(f'{index+1} | {self.comandos[chave][0]}')
+        for index, chave in enumerate(self.caixa_comandos.comandos):
+            titulo_comando = list(self.caixa_comandos.comandos[chave].keys())[0]
+            print(f'{index+1} | {titulo_comando}')
 
     def executa_comando(self,cmd:str):
-        return self.comandos[cmd][1]
+        resposta = list(self.caixa_comandos.comandos[cmd].values())[0][r.randint(0,len(self.caixa_comandos.comandos[cmd])-1)]
+        return (f'Bot {self.nome} diz => {resposta}')
 
     @abstractmethod
     def boas_vindas():
