@@ -1,5 +1,6 @@
 
 from Bots.BotZangado import BotZangado
+from Bots.BotTriste import BotTriste
 from Bots.Bot import Bot
 
 class SistemaChatBot:
