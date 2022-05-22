@@ -5,4 +5,3 @@ class CaixaComandos:
     @property
     def comandos(self):
         return self.__comandos
-

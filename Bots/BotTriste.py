@@ -1,11 +1,8 @@
 from Bots.Bot import Bot
-from ComandosBots.CaixaComandos import CaixaComandos
+from Bots.CaixaComandos import CaixaComandos
 from ComandosBots.dbComandos import comandosBotTriste
 
 class BotTriste(Bot):
-    def __init__(self, nome:str):
-        super().__init__(nome)
-        self.caixa_comandos = CaixaComandos(comandosBotTriste())
 
     def apresentacao(self):
         return f'O-Oi, me chamo {self.nome}. Esse parece um nome triste...?'
